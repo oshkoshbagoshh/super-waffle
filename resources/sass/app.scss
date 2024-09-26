@@ -1,0 +1,190 @@
+/******
+*
+* Global Style Sheet for TFN
+* Last updated: Thu Sep 26 15:05:00 CDT 2024
+*
+*/
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik:wght@400;500;700&display=swap');
+
+// Variables
+$smoky-black: #100B00;
+$indigo: #440381;
+$blue-violet: #8338EC;
+$sapphire: #0056BF;
+$sapphire-dark: #00449E;
+$white: #FFFFFF;
+
+$body-font: 'Open Sans', sans-serif;
+$heading-font: 'Rubik', sans-serif;
+
+// Mixins
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+    transition: $property $duration $timing;
+}
+
+// Base styles
+body {
+    font-family: $body-font;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $smoky-black;
+    background-color: $white;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font;
+    color: $indigo;
+    margin: 0 0 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+p {
+    margin: 0 0 15px;
+}
+
+a {
+    color: $indigo;
+    text-decoration: none;
+    @include transition(color);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.caption {
+    font-family: $body-font;
+    color: $blue-violet;
+    font-size: 0.9em;
+}
+
+// Layout
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+// Buttons
+.button {
+    font-family: $heading-font;
+    background-color: $sapphire;
+    color: $white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+    @include transition(background-color);
+
+    &:hover {
+        background-color: $sapphire-dark;
+    }
+}
+
+// Forms
+.form {
+    &-group {
+        margin-bottom: 1em;
+    }
+
+    &-label {
+        display: block;
+        margin-bottom: 0.5em;
+        font-weight: 600;
+        color: $smoky-black;
+    }
+
+    &-input {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $indigo;
+        border-radius: 4px;
+        font-size: 1em;
+        font-family: $body-font;
+        @include transition(border-color);
+
+        &:focus {
+            outline: none;
+            border-color: $blue-violet;
+        }
+    }
+}
+
+// Utility classes
+.text {
+    &-center {
+        text-align: center;
+    }
+
+    &-left {
+        text-align: left;
+    }
+
+    &-right {
+        text-align: right;
+    }
+}
+
+@each $direction in top, bottom, left, right {
+    .m#{str-slice($direction, 0, 1)}-1 {
+        margin-#{$direction}: 1em;
+    }
+    .p#{str-slice($direction, 0, 1)}-1 {
+        padding-#{$direction}: 1em;
+    }
+}
+
+// Responsive design
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+@each $breakpoint, $value in $breakpoints {
+    @media (min-width: $value) {
+        .container {
+            @if $breakpoint == sm {
+                max-width: 540px;
+            } @else if $breakpoint == md {
+                max-width: 720px;
+            } @else if $breakpoint == lg {
+                max-width: 960px;
+            } @else if $breakpoint == xl {
+                max-width: 1140px;
+            }
+        }
+    }
+}
+
