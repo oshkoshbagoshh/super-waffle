@@ -15,7 +15,9 @@ export default function Home() {
             <About />
             <Services />
             <ContactForm />
+            <FAQ />
         </MainLayout>
+
     );
 }
 
