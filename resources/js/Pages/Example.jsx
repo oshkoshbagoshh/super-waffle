@@ -1,6 +1,7 @@
 import React from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import {Head} from '@inertiajs/react';
+import TextInput from "@/Components/TextInput.jsx";
 
 export default function Example({auth}) {
     return (
@@ -16,6 +17,7 @@ export default function Example({auth}) {
                         <div className="p-6 text-gray-900">This is an example page!</div>
                     </div>
                 </div>
+
             </div>
         </AuthenticatedLayout>
     );

@@ -1,5 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
+import Example from "@/Pages/Example.jsx";
 
 export default function Dashboard() {
     return (
@@ -20,6 +21,8 @@ export default function Dashboard() {
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </AuthenticatedLayout>
     );
