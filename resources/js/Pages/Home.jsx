@@ -1,23 +1,14 @@
 import React from 'react';
-import MyComponent from '../Components/MyComponent.jsx';
-import MainLayout from '../Layouts/MainLayout.jsx'
-import Hero from '@/Components/Hero.jsx';
-import About from '@/Components/About.jsx';
-import Services from '@/Components/Services.jsx';
-import FAQ from '@/Components/FAQ.jsx';
-import ContactForm from '@/Components/ContactForm.jsx';
+import Nav from '../Components/Nav.jsx';
 
-// function
-export default function Home() {
+const Home = () => {
     return (
-        <MainLayout>
-            <Hero />
-            <About />
-            <Services />
-            <ContactForm />
-            <FAQ />
-        </MainLayout>
-
+        <div>
+            <Nav />
+            <h1>Welcome to My App</h1>
+            <p>This is the home page.</p>
+        </div>
     );
-}
+};
 
+export default Home;
