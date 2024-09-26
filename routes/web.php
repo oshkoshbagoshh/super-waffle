@@ -24,4 +24,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Example
+Route::get('/example', function() {
+    return Inertia::render('Example');
+})->middleware(['auth', 'verified'])->name('example');
+
+// Counter (without auth)
+
+
+
+
+
+
 require __DIR__.'/auth.php';
